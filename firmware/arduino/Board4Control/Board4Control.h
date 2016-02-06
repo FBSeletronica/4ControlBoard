@@ -41,7 +41,6 @@
 #define NOPRESS 0
 #define PRESS 1
 
-
 class Board4Control
 {
 	public:
