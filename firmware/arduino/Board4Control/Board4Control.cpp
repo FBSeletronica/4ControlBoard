@@ -28,10 +28,7 @@ void Board4Control::beep(int time){
  }
  
  byte Board4Control::readButton(byte bt){
-	 
 	 return digitalRead(bt);
-	 
-	 
  }
 
 
