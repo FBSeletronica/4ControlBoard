@@ -21,6 +21,8 @@
 
 #include <Board4Control.h>
 
+byte ST_BT1 = 0;
+
 void setup() {
   b4Control.begin();  // init pins(LED, buzzer, backlight) and lcd
   
@@ -43,25 +45,21 @@ void setup() {
   lcd.setCursor(0, 1);
   lcd.print("S3:  S3:  S5:   ");
    
-  
-  
 }
 
 void loop() {
-  
+ 
   if(b4Control.readButton(SW1_PIN)){
-    b4Control.beep(100);
+    if(ST_BT1 == NOPRESS){
+      b4Control.beep(100);
+      lcd.setCursor(3,0);
+      lcd.print(1);
+    }   
+  }
+  else{
+    ST_BT1 = NOPRESS;
+    lcd.setCursor(3,0);
+    lcd.print(0);
   }
   
-  if(b4Control.readButton(SW2_PIN)){
-    b4Control.beep(100);
-  }
-  
-  if(b4Control.readButton(SW3_PIN)){
-    b4Control.beep(100);
-  }
-  
-  if(b4Control.readButton(SW4_PIN)){
-    b4Control.beep(100);
-  }
 }

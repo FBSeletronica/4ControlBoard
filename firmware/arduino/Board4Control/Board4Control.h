@@ -38,6 +38,8 @@
 
 //constants
 #define BUZZERPASSIVE   // using passsive buzzer with tone() funcion
+#define NOPRESS 0
+#define PRESS 1
 
 
 class Board4Control
